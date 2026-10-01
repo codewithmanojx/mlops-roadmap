@@ -112,12 +112,7 @@ Named once so viewers know the landscape and see the choices are deliberate.
 
 Status: tool list agreed and published in README.md.
 
-Open:
-- Whether one project runs through the whole series or each tool repo stands
-  alone.
-- Repo granularity: with ~35 tools, one repo per tool is too many. Proposed:
-  companion tools live in the main tool's repo (Bash in `learn-linux`, GitHub
-  in `learn-git`, uv in `learn-python`).
+Structure is settled. No more setup questions; sessions are tutoring.
 
 ## Conventions
 
@@ -127,6 +122,19 @@ Open:
 - Networking basics live in `learn-linux`, not in a repo of their own.
 - Kubeflow means Kubeflow Pipelines standalone on a local `kind` cluster, not
   a full Kubeflow install.
+- One `learn-<tool>` repo per category row, not per tool. Companion tools live
+  in the main tool's repo: Bash in `learn-linux`, GitHub in `learn-git`, uv in
+  `learn-python`, NumPy with pandas, Prometheus with Grafana.
+- Each `learn-<tool>` repo has standalone exercises and ends with an "apply it
+  to the project" step that adds the tool to the practice project.
+- Combined repos are named after the main tool, and their README says what's
+  inside: `learn-pandas` (NumPy inside), `learn-prometheus` (Grafana inside).
+- Phase 4's "FastAPI in Docker" reuses `learn-fastapi` and the practice
+  project; no separate repo.
+- The practice project is `mlops-practice-project`, created when Phase 0
+  reaches Python. It grows across the phases, from a Python script to a
+  containerised, deployed, tracked, served and monitored ML system. Add a line
+  about it to README.md only once the repo exists.
 - Tool repos use role-neutral wording: the tools are for anyone, not only DevOps.
 - Every repo has README.md, CLAUDE.md (committed, self-contained), .gitignore,
   LICENSE (MIT, code) and LICENSE-docs (CC BY 4.0, notes and docs). The README
@@ -142,6 +150,8 @@ Open:
 
 - Concise and technically precise. Push back on over-engineering.
 - Ask before creating files.
+- Tutor mode: teach Manoj the current topic. Find gaps first, explain the
+  why, check understanding with questions, and give hints before answers.
 - Record every decision in the log below, so the next session picks up where
   this one left off.
 
@@ -176,3 +186,7 @@ Older rows stay as history; later rows win where they conflict.
 | 2026-10-01 | Phase 0 videos are short, but Kubernetes study stays deep for the CKA. |
 | 2026-10-01 | Learning first: sessions are for learning, notes and research only. No video content, outlines or scripts until Manoj explicitly asks for a video. Video planning details removed from this file. |
 | 2026-10-01 | README.md updated to Phases 0–6, Azure module and the "mentioned, not taught" list; posting schedule removed. |
+| 2026-10-01 | Repo granularity: one `learn-<tool>` repo per category row, not per tool. Bash in `learn-linux`, GitHub in `learn-git`, uv in `learn-python`, NumPy + pandas together, Prometheus + Grafana together. |
+| 2026-10-01 | Both standalone and connected: each `learn-<tool>` repo has standalone exercises and ends with an "apply it to the project" step; one practice-project repo grows across the phases. |
+| 2026-10-01 | Names: practice project is `mlops-practice-project` (created when Phase 0 reaches Python). Combined repos are named after the main tool: `learn-pandas` (NumPy inside), `learn-prometheus` (Grafana inside); each README says what's inside. FastAPI in Docker reuses `learn-fastapi`. README line about the practice project waits until that repo exists. |
+| 2026-10-01 | Structure settled; sessions switch to tutor mode, starting with Phase 0 (Linux). |
