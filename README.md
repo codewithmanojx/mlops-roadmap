@@ -34,7 +34,7 @@ to its repo once that topic starts.
 |---|---|---|
 | OS & scripting | Linux, Bash (plus networking basics) | Planned |
 | Version control | Git + GitHub | Planned |
-| Language | Python (uv for environments and packaging) | Planned |
+| Language | Python (uv for environments and packaging) | [learn-python](https://github.com/codewithmanojx/learn-python) |
 | Containers | Docker | Planned |
 | Orchestration | Kubernetes (kind locally, AKS in the cloud) | Planned |
 | CI/CD | GitHub Actions | Planned |
