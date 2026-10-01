@@ -4,14 +4,14 @@ A beginner-friendly path from your first Linux command to running ML models
 and LLMs in production, one tool at a time.
 
 I'm Manoj, a DevOps engineer working toward MLOps, and I'm learning in public.
-I teach the ops side from experience; the ML side I'm learning alongside you.
-Every tool gets videos on [YouTube](https://www.youtube.com/@codewithmanojx)
-and its own repo with notes and code.
+The ops side I know from experience; the ML side I'm learning from scratch.
+Notes and code for each tool go in their own repo, and some topics get videos
+on [YouTube](https://www.youtube.com/@codewithmanojx).
 
 ## Where to start
 
-- **New to all of this?** Start at Stage 1.
-- **Already working in DevOps or cloud?** Skip to Stage 2.
+- **New to all of this?** Start at Phase 0.
+- **Already working in DevOps or cloud?** Skip to Phase 1.
 
 ## What MLOps is
 
@@ -25,86 +25,107 @@ data → train → track → package → deploy → monitor → retrain
 
 ## The roadmap
 
-One tool per category. Each tool links to its repo once that stage starts.
+One tool per category. Open source first, Azure as the cloud. Each row links
+to its repo once that topic starts.
 
-### Stage 1: Foundations
+### Phase 0: Foundations
 
-| Tool | Why it's here | Repo |
+| Category | Tool | Repo |
 |---|---|---|
-| Linux | Every server, container and cluster runs on it. Includes Bash and networking basics. | Planned |
-| Git | Code, infrastructure and pipelines are all versioned. | Planned |
-| Python | The language of ML and of most MLOps tools. | Planned |
-| Docker | Packages an app and its dependencies, models included, so it runs the same everywhere. | Planned |
-| Kubernetes | Runs containers at scale. Kubeflow and KServe run on top of it. | Planned |
-| GitHub Actions | Automates testing, building and deploying. | Planned |
-| Azure basics | Where everything runs: subscriptions, resource groups, identity, storage, ACR, AKS. | Planned |
-| Terraform | Builds that Azure setup as code. | Planned |
+| OS & scripting | Linux, Bash (plus networking basics) | Planned |
+| Version control | Git + GitHub | Planned |
+| Language | Python (uv for environments and packaging) | Planned |
+| Containers | Docker | Planned |
+| Orchestration | Kubernetes (kind locally, AKS in the cloud) | Planned |
+| CI/CD | GitHub Actions | Planned |
+| Infrastructure as code | Terraform | Planned |
+| Cloud | Azure | Planned |
 
-### Stage 2: ML foundations
+### Phase 1: ML Fundamentals
 
-| Tool | Why it's here | Repo |
+| Category | Tool | Repo |
 |---|---|---|
-| pandas | Load, clean and explore data. | Planned |
-| scikit-learn | Train and evaluate classic models: enough ML to understand what you're operating. | Planned |
+| Notebooks | Jupyter | Planned |
+| Data handling | NumPy, pandas | Planned |
+| Classic ML | scikit-learn | Planned |
+| Visualisation | matplotlib | Planned |
+| Deep learning (intro only) | PyTorch | Planned |
 
-### Stage 3: Core MLOps
+### Phase 2: MLOps Core
 
-| Tool | Why it's here | Repo |
+| Category | Tool | Repo |
 |---|---|---|
-| MLflow | Track experiments and register model versions. | Planned |
-| DVC | Version datasets and models alongside Git. | Planned |
-| FastAPI | Put a model behind an HTTP API. | Planned |
+| Experiment tracking + model registry | MLflow | Planned |
+| Data versioning | DVC | Planned |
+| Model as an API | FastAPI | Planned |
+| Testing | pytest | Planned |
 
-### Stage 4: Cloud ML
+### Phase 3: Pipelines & Orchestration
 
-| Tool | Why it's here | Repo |
+| Category | Tool | Repo |
 |---|---|---|
-| Azure ML | The managed, all-in-one version of Stage 3 on Azure. | Planned |
+| ML pipelines | Kubeflow Pipelines | Planned |
 
-### Stage 5: ML on Kubernetes
+### Phase 4: Model Serving
 
-| Tool | Why it's here | Repo |
+| Category | Tool | Repo |
 |---|---|---|
-| Kubeflow Pipelines | Turn the ML steps into a repeatable pipeline on Kubernetes. | Planned |
-| KServe | Serve models on Kubernetes with autoscaling. | Planned |
+| Simple serving | FastAPI in Docker | Planned |
+| Kubernetes-native serving | KServe | Planned |
 
-### Stage 6: Monitoring
+### Phase 5: Monitoring
 
-| Tool | Why it's here | Repo |
+| Category | Tool | Repo |
 |---|---|---|
-| Evidently AI | Detect data drift and quality drops, which tells you when to retrain. | Planned |
+| Data & model drift | Evidently AI | Planned |
+| System metrics | Prometheus + Grafana | Planned |
 
-### Stage 7: LLMOps
+### Phase 6: LLMOps
 
-| Tool | Why it's here | Repo |
+| Category | Tool | Repo |
 |---|---|---|
-| Ollama | Run open models locally. | Planned |
-| vLLM | Serve LLMs in production. | Planned |
-| LlamaIndex | Connect an LLM to your own data (RAG). | Planned |
-| Langfuse | Trace, evaluate and track the cost of LLM calls. | Planned |
+| Run LLMs locally | Ollama | Planned |
+| Production LLM serving | vLLM | Planned |
+| RAG | LlamaIndex | Planned |
+| LLM observability & evals | Langfuse | Planned |
+
+### Azure module
+
+Where it all runs in the cloud, covered as its own section:
+Azure ML · AKS · Azure Container Registry · Blob Storage · Key Vault
 
 ## Notes on tool choices
 
 - **CI/CD:** GitHub Actions is free for public repos and lives next to the
-  code. Azure DevOps Pipelines is the common enterprise alternative; the
-  concepts carry over.
+  code.
 - **Infrastructure as code:** Terraform is the industry default. Its license
   is no longer open source; [OpenTofu](https://opentofu.org) is the
   open-source fork, created from Terraform 1.5.
-- **Kubernetes** goes deeper than the other tools, aligned with the CKA exam.
+- **Kubernetes** goes deeper than the other foundations, aligned with the CKA
+  exam.
 - **Kubeflow** means Kubeflow Pipelines on a local `kind` cluster, not a full
   Kubeflow install.
+- **PyTorch** is an introduction only: enough to understand and operate deep
+  learning models, not to research them.
 
-## Not on this roadmap, on purpose
+## Mentioned, not taught
 
-Feature stores, training deep learning models, multiple clouds, and
-alternatives to each tool. One tool per category, covered properly.
+Good tools, deliberately left out so each category gets one tool covered
+properly. The concepts carry over.
 
-## How the series works
+| Category | Tools |
+|---|---|
+| CI/CD | Azure DevOps Pipelines |
+| Orchestration | Airflow, Prefect |
+| Experiment tracking | Weights & Biases |
+| Serving | BentoML, Seldon |
+| Feature store | Feast |
+| Other clouds | SageMaker, Vertex AI |
 
-- Each `learn-<tool>` repo stands on its own: clone only the one you need.
-- Videos come out weekly during Stage 1 and every two weeks from Stage 2.
-  No dates promised.
+## How to use the repos
+
+Each `learn-<tool>` repo stands on its own: clone only the one you need. New
+repos appear as I reach each topic, so there are no dates.
 
 ## License
 

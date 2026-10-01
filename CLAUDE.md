@@ -6,42 +6,124 @@ Guidance for Claude Code in this repository.
 
 The hub of codewithmanojx's learn-in-public path into MLOps. Manoj, a DevOps
 engineer, revises the foundations, learns ML and MLOps one tool at a time,
-teaches each on YouTube (https://www.youtube.com/@codewithmanojx), and
-publishes one public repo per tool.
+teaches each on YouTube (https://www.youtube.com/@codewithmanojx) when time
+allows, and publishes public repos for learners.
 
 - This repo (`mlops-roadmap`): the roadmap, plus links to every tool repo.
-- Tool repos: `learn-<tool>` (e.g. `learn-docker`, `learn-mlflow`), one per
-  tool, siblings of this repo. Each is created only when that tool starts.
+- Tool repos: `learn-<tool>` (e.g. `learn-docker`, `learn-mlflow`), siblings
+  of this repo. Each is created only when that tool starts.
+
+## Priorities
+
+1. **Move into an MLOps role.** Learning comes first and sets the pace.
+2. **Videos only later, and only when Manoj asks.** He learns, researches and
+   writes notes first; he explains a topic only once he knows it. Sessions are
+   learning and improvement sessions. Do not bring up videos, outlines or
+   scripts until he asks for one.
 
 ## Audience
 
-Beginner-friendly. Stage 1 assumes no prior experience. DevOps and cloud
-engineers who already know the foundations skip to Stage 2.
+Beginner-friendly. Phase 0 assumes no prior experience. DevOps and cloud
+engineers who already know the foundations skip to Phase 1.
 
 ## Roadmap
 
-| Stage | Tools |
-|---|---|
-| 1. Foundations | Linux (with Bash and networking basics), Git, Python, Docker, Kubernetes, GitHub Actions, Azure basics, Terraform |
-| 2. ML foundations | pandas, scikit-learn |
-| 3. Core MLOps | MLflow, DVC, FastAPI |
-| 4. Cloud ML | Azure ML |
-| 5. ML on Kubernetes | Kubeflow Pipelines, KServe |
-| 6. Monitoring | Evidently AI |
-| 7. LLMOps | Ollama, vLLM, LlamaIndex, Langfuse |
+One tool per category. Open source first, Azure as the cloud.
 
-Status: tool list and order agreed; public roadmap in README.md. Video 1
-talk track drafted in conversation, not saved. Open: whether one project runs
-through the whole series or each tool repo stands alone.
+### Phase 0: Foundations
+Taught fast in short videos. Kubernetes is the exception: Manoj studies it in
+depth for the CKA, even if the videos stay short.
+
+| Category | Tool |
+|---|---|
+| OS & scripting | Linux, Bash |
+| Version control | Git + GitHub |
+| Language | Python (uv for environments and packaging) |
+| Containers | Docker |
+| Orchestration | Kubernetes (kind locally, AKS in the cloud) |
+| CI/CD | GitHub Actions |
+| Infrastructure as code | Terraform (OpenTofu named as the open-source fork) |
+| Cloud | Azure |
+
+### Phase 1: ML Fundamentals (learned from scratch, in public)
+
+| Category | Tool |
+|---|---|
+| Notebooks | Jupyter |
+| Data handling | NumPy, pandas |
+| Classic ML | scikit-learn |
+| Visualisation | matplotlib |
+| Deep learning (intro only) | PyTorch |
+
+### Phase 2: MLOps Core
+
+| Category | Tool |
+|---|---|
+| Experiment tracking + model registry | MLflow |
+| Data versioning | DVC |
+| Model as an API | FastAPI |
+| Testing | pytest |
+
+### Phase 3: Pipelines & Orchestration
+
+| Category | Tool |
+|---|---|
+| ML pipelines | Kubeflow Pipelines |
+
+### Phase 4: Model Serving
+
+| Category | Tool |
+|---|---|
+| Simple serving | FastAPI in Docker |
+| Kubernetes-native serving | KServe |
+
+### Phase 5: Monitoring
+
+| Category | Tool |
+|---|---|
+| Data & model drift | Evidently AI |
+| System metrics | Prometheus + Grafana |
+
+### Phase 6: LLMOps
+
+| Category | Tool |
+|---|---|
+| Run LLMs locally | Ollama |
+| Production LLM serving | vLLM |
+| RAG | LlamaIndex |
+| LLM observability & evals | Langfuse |
+
+### Azure module (its own section)
+
+Azure ML · AKS · Azure Container Registry · Blob Storage · Key Vault
+
+### Mentioned once, not taught
+
+Named once so viewers know the landscape and see the choices are deliberate.
+
+| Category | Tools |
+|---|---|
+| CI/CD | Azure DevOps Pipelines (enterprise alternative) |
+| Orchestration | Airflow, Prefect |
+| Tracking | Weights & Biases |
+| Serving | BentoML, Seldon |
+| Feature store | Feast |
+| Other clouds | SageMaker, Vertex AI |
+
+Status: tool list agreed and published in README.md.
+
+Open:
+- Whether one project runs through the whole series or each tool repo stands
+  alone.
+- Repo granularity: with ~35 tools, one repo per tool is too many. Proposed:
+  companion tools live in the main tool's repo (Bash in `learn-linux`, GitHub
+  in `learn-git`, uv in `learn-python`).
 
 ## Conventions
 
-- One tool per category. Open source first; exceptions are in the decision log.
-- Azure is the cloud. Azure ML gets its own section.
-- CI/CD is GitHub Actions. Azure DevOps Pipelines is mentioned once as the
-  enterprise alternative; nothing is built in it.
-- Kubernetes goes deep, structured around the current CKA curriculum. Check
-  the official curriculum when that stage starts; it gets revised.
+- CI/CD is GitHub Actions. Nothing is built in Azure DevOps Pipelines.
+- Kubernetes study follows the current CKA curriculum. Check the official
+  curriculum when that phase starts; it gets revised.
 - Networking basics live in `learn-linux`, not in a repo of their own.
 - Kubeflow means Kubeflow Pipelines standalone on a local `kind` cluster, not
   a full Kubeflow install.
@@ -53,6 +135,8 @@ through the whole series or each tool repo stands alone.
 - README.md here is the public roadmap. When a `learn-<tool>` repo is created,
   replace that tool's "Planned" with a link to the repo.
 - Copyright holder in LICENSE files: "Manoj Kumar (codewithmanojx)".
+- Publish under the codewithmanojx GitHub account. Each new repo sets the
+  repo-local email `106716743+codewithmanojx@users.noreply.github.com`.
 
 ## Working in this repo
 
@@ -66,15 +150,9 @@ through the whole series or each tool repo stands alone.
 If a student is working here, explain the concept and give hints before
 handing over a full solution. Point to each tool's official docs.
 
-## Publishing
-
-- Weekly while the foundation videos are short. One every two weeks once the
-  ML stages start, since those are learned from scratch.
-- Batch-record 2–3 videos before publishing the first.
-- Video 1: MLOps roadmap explainer, ~12–15 min, screen share + webcam, raw
-  with simple cuts.
-
 ## Decision log
+
+Older rows stay as history; later rows win where they conflict.
 
 | Date | Decision |
 |---|---|
@@ -91,3 +169,10 @@ handing over a full solution. Point to each tool's official docs.
 | 2026-10-01 | Cadence: weekly during Stage 1, every two weeks from Stage 2. Batch-record 2–3 videos before publishing. |
 | 2026-10-01 | Repos are siblings in the workspace root, never nested. The hub links to tool repos by URL in its README; no git submodules. |
 | 2026-10-01 | README.md (public roadmap), LICENSE (MIT) and LICENSE-docs (official CC BY 4.0 legal code) created. |
+| 2026-10-01 | Published as public repo https://github.com/codewithmanojx/mlops-roadmap under the codewithmanojx GitHub account (not the personal account). Commits use the repo-local no-reply email `106716743+codewithmanojx@users.noreply.github.com`; set the same in every new `learn-<tool>` repo. |
+| 2026-10-01 | Roadmap restructured into Phases 0–6 plus a separate Azure module (replaces the 7 stages). Added uv, Jupyter, NumPy, matplotlib, PyTorch (intro only), pytest, Prometheus + Grafana. Azure ML moves into the Azure module. Experienced engineers now skip to Phase 1. |
+| 2026-10-01 | "Mentioned once, not taught" list recorded: Azure DevOps Pipelines, Airflow, Prefect, Weights & Biases, BentoML, Seldon, Feast, SageMaker, Vertex AI. |
+| 2026-10-01 | Priorities: the move into MLOps comes first; videos are made when there's a chance, to practise articulation, explanation and storytelling. Replaces the fixed weekly / two-weekly cadence. |
+| 2026-10-01 | Phase 0 videos are short, but Kubernetes study stays deep for the CKA. |
+| 2026-10-01 | Learning first: sessions are for learning, notes and research only. No video content, outlines or scripts until Manoj explicitly asks for a video. Video planning details removed from this file. |
+| 2026-10-01 | README.md updated to Phases 0–6, Azure module and the "mentioned, not taught" list; posting schedule removed. |
